@@ -1,0 +1,96 @@
+{
+  "site": {
+    "heroName": "Athang Jadhav",
+    "heroRole": "Video Editor",
+    "introEyebrow": "Selected Work",
+    "introHeading": "Things I've edited.",
+    "contactEyebrow": "Have a project in mind?",
+    "contactHeading": "Let's work together.",
+    "contactDescription": "Send me your raw footage.",
+    "contactEmail": "editswithathang@gmail.com",
+    "pricingEyebrow": "TRANSPARENT PRICING",
+    "pricingHeading": "Clear scope.\nBetter stories.",
+    "pricingNote": "Client provides raw footage, B-roll, and music. Revisions cover adjustments to the agreed edit.",
+    "pricingPlans": [
+      {
+        "number": "01",
+        "title": "Single Short",
+        "description": "One short-form edit, captions and basic graphics.",
+        "price": "₹1,000",
+        "unit": "/ video",
+        "detail": "2–3 day turnaround · 1 revision",
+        "featured": false
+      },
+      {
+        "number": "02 · WEEKLY",
+        "title": "Weekly Pack",
+        "description": "Four shorts for a consistent publishing rhythm.",
+        "price": "₹3,200",
+        "unit": "/ week",
+        "detail": "4 videos · approx. 20% saving",
+        "featured": true
+      },
+      {
+        "number": "03",
+        "title": "Monthly Pack",
+        "description": "Sixteen shorts planned for long-term consistency.",
+        "price": "₹13,000",
+        "unit": "/ month",
+        "detail": "16 videos · approx. 20% saving",
+        "featured": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f0002",
+      "title": "Vlogs",
+      "caption": "Narrative-driven edits with paced storytelling, music timing, and transitions that keep a vlog watchable from start to finish.",
+      "videoUrl": null,
+      "isVisible": false,
+      "position": 2,
+      "createdAt": "2026-10-20T00:00:00.000Z",
+      "updatedAt": "2026-11-06T14:57:38.602Z"
+    },
+    {
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f0003",
+      "title": "Brand Edit",
+      "caption": "Shot and edited a promotional reel showcasing the new store of Kaveri Jewellers. Captured the store's interiors, ambience, jewellery displays, and overall aesthetic through carefully planned shots and cinematic camera movements. Edited the footage with engaging transitions, music, and sound design to create an attractive visual presentation that highlights the store's elegance and brand identity.",
+      "videoUrl": "/uploads/7d0e242a-9c3e-4755-a76b-ab4fd635d201.mp4",
+      "isVisible": true,
+      "position": 4,
+      "createdAt": "2026-10-20T00:00:00.000Z",
+      "updatedAt": "2026-11-06T14:57:38.602Z"
+    },
+    {
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f0004",
+      "title": "Shortfilm",
+      "caption": "Edited a short film built entirely from still photographs, carefully sequencing and timing each image to create the illusion of motion and establish a distinct visual style. Designed and incorporated the complete soundscape from scratch, including sound effects, ambience, and background audio, to bring life, depth, and emotion to otherwise silent visuals.",
+      "videoUrl": "/uploads/97766a3e-cf6a-4391-af0d-dbdd8eea339c.mp4",
+      "isVisible": true,
+      "position": 3,
+      "createdAt": "2026-10-20T00:00:00.000Z",
+      "updatedAt": "2026-11-06T14:57:38.602Z"
+    },
+    {
+      "id": "cd552215-5cf5-45ab-a2c6-3651385be996",
+      "title": "Podcast",
+      "caption": "i turned the long form video to a short form.",
+      "videoUrl": "/uploads/53dd9bbc-7f08-49b3-a097-93825eb72819.mov",
+      "isVisible": true,
+      "position": 0,
+      "createdAt": "2026-10-20T15:24:52.822Z",
+      "updatedAt": "2026-11-06T14:57:38.602Z"
+    },
+    {
+      "id": "8ce42207-12d8-427c-a2cf-fa691235738e",
+      "title": "music-synced or teaser edit",
+      "caption": "railer-style edit with cuts landing on the beat.",
+      "videoUrl": "/uploads/2b927e00-c9ae-4fcf-8766-9973a1c1d22c.mp4",
+      "isVisible": true,
+      "position": 1,
+      "createdAt": "2026-10-20T17:32:15.863Z",
+      "updatedAt": "2026-11-06T14:57:38.602Z"
+    }
+  ]
+}
