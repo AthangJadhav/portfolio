@@ -175,6 +175,29 @@ export function normalizeSiteContent(site: Partial<SiteContent> | null): SiteCon
   }
 }
 
+function sanitizeSections(sections: Section[]): Section[] {
+  const sanitized = Array.isArray(sections) ? sections : []
+  const defaultById = new Map(defaultLocalSections.map((section) => [section.id, section]))
+
+  return sanitized.map((section) => {
+    const fallback = defaultById.get(section.id)
+    if (!fallback) return section
+
+    const merged = { ...fallback, ...section }
+    if (!merged.videoUrl && fallback.videoUrl) {
+      merged.videoUrl = fallback.videoUrl
+    }
+
+    return {
+      ...merged,
+      title: section.title || fallback.title,
+      caption: section.caption || fallback.caption,
+      isVisible: typeof section.isVisible === "boolean" ? section.isVisible : fallback.isVisible,
+      position: typeof section.position === "number" ? section.position : fallback.position,
+    }
+  })
+}
+
 function ensureStoredData() {
   if (typeof window === "undefined") {
     return { site: defaultLocalSite, sections: defaultLocalSections }
@@ -190,7 +213,12 @@ function ensureStoredData() {
   try {
     const parsed = JSON.parse(raw)
     const site = normalizeSiteContent(parsed?.site ?? defaultLocalSite)
-    const sections = Array.isArray(parsed?.sections) ? parsed.sections : defaultLocalSections
+    const sections = sanitizeSections(Array.isArray(parsed?.sections) ? parsed.sections : defaultLocalSections)
+
+    if (JSON.stringify(sections) !== JSON.stringify(parsed?.sections ?? defaultLocalSections)) {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ site, sections }))
+    }
+
     return { site, sections }
   } catch {
     const value = JSON.stringify({ site: defaultLocalSite, sections: defaultLocalSections })
@@ -252,7 +280,7 @@ export function mediaUrl(path: string | null): string | null {
   if (!path) return null
   if (path.startsWith("blob:") || /^https?:\/\//i.test(path)) return path
   if (path.startsWith("./") || path.startsWith("../")) return path
-  if (path.startsWith("/")) return `.${path}`
+  if (path.startsWith("/")) return path
   return path
 }
 
