@@ -47,7 +47,7 @@ const defaultLocalSections: Section[] = [
     id: "section-vlogs",
     title: "Vlogs",
     caption: "Narrative-driven edits with paced storytelling, music timing, and transitions that keep a vlog watchable from start to finish.",
-    videoUrl: null,
+    videoUrl: "./videos/1.mp4",
     isVisible: false,
     position: 0,
     createdAt: "2026-10-20T00:00:00.000Z",
@@ -57,7 +57,7 @@ const defaultLocalSections: Section[] = [
     id: "section-brand-edit",
     title: "Brand Edit",
     caption: "Shot and edited a promotional reel showcasing the new store of Kaveri Jewellers.",
-    videoUrl: null,
+    videoUrl: "./videos/4.mp4",
     isVisible: true,
     position: 1,
     createdAt: "2026-10-20T00:00:00.000Z",
@@ -67,7 +67,7 @@ const defaultLocalSections: Section[] = [
     id: "section-shortfilm",
     title: "Shortfilm",
     caption: "Edited a short film built entirely from still photographs, carefully sequencing and timing each image to create the illusion of motion.",
-    videoUrl: null,
+    videoUrl: "./videos/6.mp4",
     isVisible: true,
     position: 2,
     createdAt: "2026-10-20T00:00:00.000Z",
@@ -77,7 +77,7 @@ const defaultLocalSections: Section[] = [
     id: "section-podcast",
     title: "Podcast",
     caption: "I turned the long form video to a short form.",
-    videoUrl: null,
+    videoUrl: "./videos/1.mp4",
     isVisible: true,
     position: 3,
     createdAt: "2026-10-20T15:24:52.822Z",
@@ -87,7 +87,7 @@ const defaultLocalSections: Section[] = [
     id: "section-teaser",
     title: "Music-synced teaser",
     caption: "Trailer-style edit with cuts landing on the beat.",
-    videoUrl: null,
+    videoUrl: "./videos/4.mp4",
     isVisible: true,
     position: 4,
     createdAt: "2026-10-20T17:32:15.863Z",
@@ -250,7 +250,9 @@ export function isLoggedIn(): boolean {
 
 export function mediaUrl(path: string | null): string | null {
   if (!path) return null
-  if (path.startsWith("blob:")) return path
+  if (path.startsWith("blob:") || /^https?:\/\//i.test(path)) return path
+  if (path.startsWith("./") || path.startsWith("../")) return path
+  if (path.startsWith("/")) return `.${path}`
   return path
 }
 

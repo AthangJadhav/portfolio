@@ -107,7 +107,7 @@ function App() {
       <div className="ambient-glow ambient-glow--two" aria-hidden="true" />
       <div className="grain" aria-hidden="true" />
       <img
-        src="/art/athang-face.png"
+        src="./art/athang-face.png"
         alt=""
         className="ambient-portrait"
         aria-hidden="true"
